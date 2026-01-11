@@ -5,6 +5,14 @@ class Setting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Text(
+          'Comming Soon...',
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+      ),
+    );
   }
 }

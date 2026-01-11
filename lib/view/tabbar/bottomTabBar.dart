@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
+import 'package:randpaper/view/screen/bookmark/bookmark.dart';
 import 'package:randpaper/view/screen/home/home.dart';
 import 'package:randpaper/view/screen/setting/setting.dart';
 
@@ -12,6 +13,7 @@ class BottomTabBar extends ConsumerWidget {
 
 	static final List<Widget> _pages = <Widget>[
 		Home(),
+    Bookmark(),
 		Setting(),
 	];
 
@@ -19,7 +21,10 @@ class BottomTabBar extends ConsumerWidget {
 	Widget build(BuildContext context, WidgetRef ref) {
 		final selectedIndex = ref.watch(bottomTabIndexProvider);
 		return Scaffold(
-			body: _pages[selectedIndex],
+			body: IndexedStack(
+        index: selectedIndex,
+        children: _pages,
+      ),
 			bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         type: BottomNavigationBarType.fixed,
@@ -37,6 +42,10 @@ class BottomTabBar extends ConsumerWidget {
 					BottomNavigationBarItem(
 						icon: Icon(Icons.imagesearch_roller_outlined),
 						label: 'Collection',
+					),
+          BottomNavigationBarItem(
+						icon: Icon(Icons.bookmark),
+						label: 'Bookmark',
 					),
 					BottomNavigationBarItem(
 						icon: Icon(Icons.settings),

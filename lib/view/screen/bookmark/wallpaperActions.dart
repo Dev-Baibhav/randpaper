@@ -7,21 +7,20 @@ import 'package:randpaper/view_model/bookmark/setBookmark.dart';
 import 'package:randpaper/view_model/home/setWallpaperBottomSheet.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
-class Setwallpaper extends StatelessWidget {
+class WallpaperActions extends StatelessWidget {
   final dynamic imagePath;
 
-  const Setwallpaper({super.key, required this.imagePath});
+  const WallpaperActions({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
       ),
       backgroundColor: Colors.black,
-      body: Center(child: Hero(tag: '$imagePath', child: Image.asset(imagePath))),
+      body: Center(child: Hero(tag: '${imagePath}_wallpaper', child: Image.asset(imagePath))),
 
       floatingActionButton: SpeedDial(
         icon: Icons.add,
@@ -30,9 +29,9 @@ class Setwallpaper extends StatelessWidget {
         activeForegroundColor: Colors.black,
         children: [
           SpeedDialChild(
-            child: Icon(Icons.bookmark),
+            child: Icon(Icons.bookmark_border),
             onTap: () {
-              addBookmark(imagePath);
+              removeBookmark(imagePath);
             },
           ),
           SpeedDialChild(

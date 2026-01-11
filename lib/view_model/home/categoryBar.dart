@@ -5,57 +5,74 @@ final List<Map<String, String>> items = [
     'title': 'Cars',
     'image': 'assets/images/Wallpaper1.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Gojo',
     'image': 'assets/images/Wallpaper2.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Anime',
     'image': 'assets/images/Wallpaper3.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Gojo',
     'image': 'assets/images/Wallpaper4.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Batman',
     'image': 'assets/images/Wallpaper5.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Cars',
     'image': 'assets/images/Wallpaper6.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Anime',
     'image': 'assets/images/Wallpaper7.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Anime',
     'image': 'assets/images/Wallpaper8.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Gojo',
     'image': 'assets/images/Wallpaper9.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
   },
   {
     'title': 'Gojo',
     'image': 'assets/images/Wallpaper10.jpeg',
     'isActive': 'false',
+    'isBookmarked': 'false',
+  },
+  {
+    'title': 'Batman',
+    'image': 'assets/images/Wallpaper11.jpeg',
+    'isActive': 'false',
+    'isBookmarked': 'false',
   },
 ];
 
 Map<String, List<Map<String, String>>> categories = {};
 
 final List<Map<String, String>> imagesData = [];
+final List<Map<String, String>> bookmarkedImagesData = [];
 
 void createCategory() {
   categories.clear();
@@ -67,6 +84,8 @@ void createCategory() {
       'title': 'All',
       'image': 'assets/images/Wallpaper$i.jpeg',
       'isActive': 'true',
+      'isBookmarked': 'false',
+
     });
   }
 
@@ -87,8 +106,6 @@ void createCategory() {
       }
     }
   });
-
-
 }
 
 void makeTrue(String label) {

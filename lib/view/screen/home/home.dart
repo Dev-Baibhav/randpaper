@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
@@ -19,7 +19,11 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -59,7 +63,6 @@ class _HomeState extends State<Home> {
                     final data = item as Map<String, String>;
 
                     return GestureDetector(
-
                       onTap: () {
                         context.push(
                           Routes.setWallpaper,
@@ -69,8 +72,8 @@ class _HomeState extends State<Home> {
 
                       child: Hero(
                         tag: data['image']!,
-                        child: Image.asset(data['image']!, fit: BoxFit.cover)
-                      )
+                        child: Image.asset(data['image']!, fit: BoxFit.cover),
+                      ),
                     );
                   },
                 ),
@@ -98,7 +101,7 @@ class _HomeState extends State<Home> {
         decoration: BoxDecoration(
           color: isSelected ? Colors.indigo : Colors.black,
           border: Border.all(width: 1, color: Colors.indigo),
-          borderRadius: BorderRadius.circular(isSelected ? 10 : 20),
+          borderRadius: BorderRadius.circular(!isSelected ? 10 : 30),
         ),
 
         child: Center(
@@ -108,7 +111,7 @@ class _HomeState extends State<Home> {
               color: Colors.white,
               fontSize: 18,
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              overflow: TextOverflow.ellipsis
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ),

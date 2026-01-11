@@ -4,4 +4,5 @@ class Routes {
   static const String tabBar = '/tab-bar';
   static const String settings = '/settings';
   static const String setWallpaper = '/set-wallpaper';
+  static const String wallpaperActions = '/wallpaper-actions';
 }
