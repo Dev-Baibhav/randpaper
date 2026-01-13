@@ -1,4 +1,4 @@
-# randpaper
+# Random Wallpaper
 
 A new Flutter project.
 
